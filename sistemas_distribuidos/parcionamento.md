@@ -1,19 +1,19 @@
-Atividade 1.3
+## 1.3
 
-A) 
-Tal particionamento tem impacto nas relações de leitura e escrita
 
-Leitura: 
-Vantagens:
-O Dado C fica disponível por toda a rede, logo ele só ficaria inacessível na indisponibilidade da rede por completo
-Os dados A e B ficam particionados, balanceando a carga de leitura e permitindo leitura concorrente
+#### Leitura:
+
+Pontos positivos:
+Dado C não está parcionado. Ou seja, domente ficará indisponível se todo o sistema cair. 
+Há um balanceamento de carga em A e B, o que divide as requisições específicas.
 
 Desvantagens:
-Para requerer ambas as partes do dado A e B será necessária a disponibilidade completa da rede
+Os dados de A estão separados (parcionados) ou seja, caso nescessário informações compostas por cada uma das partes, precisatemo de duas requisições. 
 
 Escrita:
-Vantagens:
-A escrita em A e B não correm risco de quebra de consistência visto que cada nó é delegado uma parte específica do dado
+Pontos negativos:
+Em A e B, temos os dados separados, ou seja, podemos escrever individualmente em cada um dos nodes;
+
 
 Desvantagens:
 O dado C pode possuir falha na consistência dos dados pois ambos os nós possuem uma cópia dele
@@ -24,12 +24,7 @@ C) O Ideal seria que a maior parte dos dados fossem passados para o Nó 1, princ
 
 D) Tipo de dado: Caso alguma parte dos dados seja mais de escrita do que de leitura seria ideal uma reorganização, dados mais de leitura idealmente devem existir em todas as instâncias enquanto os de escrita somente nas com maior disponibilidade
 
-
-
 Atividade 1.4
-
-
-
 
 Cliente -> Servidor : Min = 2, Max = 6
 Banco : Min = 1.5, Max = 2.5
@@ -38,8 +33,8 @@ Melhor caso = 2 + 1.5 + 10 = 13.5
 Pior caso = 6 + 2.5 + 25 = 33.5
 
 A) 
-Melhor caso (dado no cache) = 2 + 0.5 + 10 = 12.5
-Pir caso (dado fora do cache) = 6 + 2.5 + 25 = 33.5
+Melhor = 2 + 0.5 + 10 = 12.5 (cache)
+Pir caso = 6 + 2.5 + 25 = 33.5 (db)
 
 B)
 
